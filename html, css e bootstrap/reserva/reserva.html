@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./reserva.css">
+<title>Formulário de Reserva de Viagem</title>
+</head>
+<body>
+
+    <h1>Formulário de Reserva de Viagem</h1>
+    
+    <form action="" method="post">
+        <fieldset>
+            <legend>Informações Pessoais</legend>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br><br>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="numero">Telefone:</label>
+            <input type="number" id="numero" name="numero" required><br><br>
+        </fieldset>
+    
+        <fieldset>
+            <legend>Serviços Desejados</legend>
+            <label for="servicos">Serviços Desejados:</label>
+            <select id="servicos" name="servicos" required>
+                <option value="passagens">Compra de Passagens</option>
+                <option value="hospedagem">Reserva de Hospedagem</option>
+                <option value="veiculos">Aluguel de Veículos</option>
+            </select><br><br>
+        </fieldset>
+    
+        <fieldset>
+            <legend>Forma de Pagamento</legend>
+            <label>Forma de Pagamento:</label><br>
+            <input type="radio" id="cartao" name="pagamento" value="cartao" required>
+            <label for="cartao">Cartão de Crédito</label><br>
+            <input type="radio" id="boleto" name="pagamento" value="boleto" required>
+            <label for="boleto">Boleto</label><br>
+            <input type="radio" id="pix" name="pagamento" value="pix" required>
+            <label for="pix">PIX</label><br>
+            <input type="radio" id="transf" name="pagamento" value="transf" required>
+            <label for="transf">Transferência Bancaria</label><br><br>
+        </fieldset>
+    
+        <fieldset>
+            <legend>Prazo de Pagamento</legend>
+            <label for="prazo">Prazo de Pagamento:</label>
+            <select id="prazo" name="prazo" required>
+                <option value="1">À vista</option>
+                <option value="2">2X sem juros</option>
+                <option value="3">3X sem juros</option>
+                <option value="4">4X sem juros</option>
+                <option value="5">5X sem juros</option>
+                <option value="6">6X sem juros</option>
+                <option value="7">7X com juros</option>
+                <option value="8">8X com juros</option>
+                <option value="9">9X com juros</option>
+                <option value="10">10X com juros</option>
+                <option value="11">11X com juros</option>
+                <option value="12">12X com juros</option>
+            </select><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Observações</legend>
+            <label for="obs">Observações:</label>
+            <textarea name="obs" id="obs" cols="26" rows="3"></textarea><br><br>
+        </fieldset>
+    
+        <input type="submit" value="Enviar Reserva">
+    </form>
+    
+    </body>
+    </html>
