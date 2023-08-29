@@ -39,15 +39,15 @@ class Desenvolvedor extends Funcionario {
     }
 }
 
-// Criando instâncias
-const gerente = new Gerente('AnaJu', 27, 'Gerente de Projetos', 'TI');
-const desenvolvedor = new Desenvolvedor('Bernardo', 24, 'Web developer', 'JavaScript');
+// Instanciando novos Objetos
+const gerente1 = new Gerente('AnaJu', 27, 'Gerente de Projetos', 'TI');
+const desenvolvedor1 = new Desenvolvedor('Bernardo', 24, 'Web developer', 'JavaScript');
 
 // Chamando métodos
-gerente.seApresentar();
-gerente.trabalhar();
-gerente.gerenciar();
+gerente1.seApresentar();
+gerente1.trabalhar();
+gerente1.gerenciar();
 
-desenvolvedor.seApresentar();
-desenvolvedor.trabalhar();
-desenvolvedor.programar();
+desenvolvedor1.seApresentar();
+desenvolvedor1.trabalhar();
+desenvolvedor1.programar();
