@@ -60,6 +60,8 @@ form.addEventListener('submit', function (event) {
                 throw new Error('Linguagem obrigatória para desenvolvedores.');//erro para caso de não adicionar linguagem
             }
             funcionario = new Desenvolvedor(nome, idade, cargo, linguagem);
+        } else if (cargo === 'Funcionario') {
+            funcionario = new Funcionario(nome, idade, cargo);
         } else {
             throw new Error('Cargo inválido.');
         }
