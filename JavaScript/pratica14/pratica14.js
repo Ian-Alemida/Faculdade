@@ -32,7 +32,7 @@ class Desenvolvedor extends Funcionario {
     }
 }
 
-function error(mensagem) {
+function errorMensage(mensagem) {
     const resultadoDiv = document.getElementById('resultado');
     resultadoDiv.innerHTML = `<p style="color: red;">Erro: ${mensagem}</p>`;
 }
@@ -72,6 +72,6 @@ form.addEventListener('submit', function (event) {
             <p>${funcionario instanceof Desenvolvedor ? funcionario.programar() : ''}</p>
         `;
     } catch (error) {
-        error(error.message);
+        errorMensage(error.message);
     }
 });
