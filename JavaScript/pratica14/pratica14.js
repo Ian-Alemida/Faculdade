@@ -4,11 +4,9 @@ class Funcionario {
         this.idade = idade;
         this.cargo = cargo;
     }
-
     seApresentar() {
         return `Olá, meu nome é ${this.nome}, tenho ${this.idade} anos e sou um(a) ${this.cargo}.`;
     }
-
     trabalhar() {
         return `${this.nome} está trabalhando.`;
     }
@@ -19,9 +17,8 @@ class Gerente extends Funcionario {
         super(nome, idade, cargo);
         this.departamento = departamento;
     }
-
     gerenciar() {
-        return `${this.nome} é um gerente do departamento ${this.departamento} e está gerenciando.`;
+        return `${this.nome} é um gerente do departamento ${this.departamento} e está trabalhando.`;
     }
 }
 
@@ -30,13 +27,12 @@ class Desenvolvedor extends Funcionario {
         super(nome, idade, cargo);
         this.linguagem = linguagem;
     }
-
     programar() {
-        return `${this.nome} é um desenvolvedor que programa em ${this.linguagem}.`;
+        return `${this.nome} é um desenvolvedor: ${this.linguagem}.`;
     }
 }
 
-function exibirErro(mensagem) {
+function error(mensagem) {
     const resultadoDiv = document.getElementById('resultado');
     resultadoDiv.innerHTML = `<p style="color: red;">Erro: ${mensagem}</p>`;
 }
@@ -56,12 +52,12 @@ form.addEventListener('submit', function (event) {
 
         if (cargo === 'Gerente') {
             if (!departamento) {
-                throw new Error('O departamento é obrigatório para gerentes.');
+                throw new Error('Departamento é obrigatório para gerentes.');//erro para caso de não adicionar departamento
             }
             funcionario = new Gerente(nome, idade, cargo, departamento);
         } else if (cargo === 'Desenvolvedor') {
             if (!linguagem) {
-                throw new Error('A linguagem é obrigatória para desenvolvedores.');
+                throw new Error('Linguagem obrigatória para desenvolvedores.');//erro para caso de não adicionar linguagem
             }
             funcionario = new Desenvolvedor(nome, idade, cargo, linguagem);
         } else {
@@ -76,6 +72,6 @@ form.addEventListener('submit', function (event) {
             <p>${funcionario instanceof Desenvolvedor ? funcionario.programar() : ''}</p>
         `;
     } catch (error) {
-        exibirErro(error.message);
+        error(error.message);
     }
 });
