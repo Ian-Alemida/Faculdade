@@ -9,7 +9,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 
 //Declaração do componente CriarTarefa, recebendo como props, do Componente ListarTarefa, os states handClose, tarefas e setTarefas
-const CriarTarefa = ({ handleClose, tarefas, setTarefas }) => {
+const CriarTarefa = ({ handleClose, tarefas, setTarefas, setOpenModal }) => {
   const [idTarefa, setIdTarefa] = useState();
   const [tituloTarefa, setTituloTarefa] = useState('');
   const [descricaoTarefa, setDescricaoTarefa] = useState('');
@@ -51,7 +51,9 @@ const CriarTarefa = ({ handleClose, tarefas, setTarefas }) => {
       ]);
     //console.log(`Tarefas: ` + JSON.stringify(tarefas));
     handleClose();
+    setOpenModal(true)
   };
+
 
   return (
     <Grid container spacing={2}>
@@ -154,8 +156,8 @@ const CriarTarefa = ({ handleClose, tarefas, setTarefas }) => {
       </Card>
     </Grid>
   );
-}
 
+}
 const style = {
   position: 'absolute',
   top: '50%',
